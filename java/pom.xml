@@ -51,7 +51,7 @@
                 <configuration>
                     <archive>
                         <manifest>
-                            <mainClass>countdown.Main</mainClass>
+                            <mainClass>app.Main</mainClass>
                         </manifest>
                     </archive>
                 </configuration>

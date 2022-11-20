@@ -5,6 +5,6 @@ class MainTest {
 
     @Test
     void main() {
-        assertEquals("Hello World", Main.main(null));
+        assertEquals("Hello World", Main.Hello());
     }
 }
