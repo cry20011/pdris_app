@@ -2,6 +2,7 @@ pipeline {
     agent any
     tools { 
         maven 'Maven3' 
+        allure 'Allure2'
     }
     stages {
         stage('build') {
@@ -23,7 +24,7 @@ pipeline {
                         reportBuildPolicy: 'ALWAYS',
                         results: [[path: 'java/target/allure-results']]
                     ])
-                    
+
             }
         }
         stage('sonar_qube') {
