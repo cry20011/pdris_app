@@ -2,7 +2,6 @@ pipeline {
     agent any
     tools { 
         maven 'Maven3' 
-        allure 'Allure2'
     }
     stages {
         stage('build') {
