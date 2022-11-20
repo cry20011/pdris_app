@@ -28,9 +28,8 @@ pipeline {
         }
         stage('sonarQube') {
             steps {
-                def scannerHome = tool 'SonarQube';
-                withSonarQubeEnv() {
-                    sh "${scannerHome}/bin/sonar-scanner \
+                withSonarQubeEnv('SonarQube') {
+                    sh "${tool 'SonarQube'}/bin/sonar-scanner \
                     -Dsonar.projectKey=pipeline \
                     -Dsonar.sources=java/src/main \
                     -Dsonar.tests=java/src/test \
