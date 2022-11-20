@@ -1,4 +1,3 @@
-FROM openjdk:17
-COPY ./java/src/main/java/app/ /app
-WORKDIR /app
-ENTRYPOINT ["java","Main"]
+FROM openjdk:11
+COPY ./java/target/docker-java-jar-0.0.1-SNAPSHOT.jar app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]

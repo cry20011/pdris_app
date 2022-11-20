@@ -42,5 +42,8 @@ pipeline {
                 }
             }
         }
+        stage() {
+            
+        }
     }
 }
