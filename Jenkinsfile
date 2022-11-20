@@ -6,12 +6,12 @@ pipeline {
     stages {
         stage('build') {
             steps {
-                sh 'mvn -f pom.xml clean verify'
+                sh 'mvn -f java/pom.xml clean verify'
             }
         }
         stage('test') {
             steps {
-                sh 'mvn -f pom.xml test'
+                sh 'mvn -f java/pom.xml test'
             }
         }
         stage('allure') {
