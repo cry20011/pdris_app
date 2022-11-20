@@ -1,11 +1,11 @@
 node {
     stage('build') {
-        withMaven(maven: 'mvn') {
+        withMaven {
             sh 'mvn -f java/pom.xml clean verify'
         }
     }
     stage('test') {
-        withMaven(maven: 'mvn') {
+        withMaven {
             sh 'mvn -f java/pom.xml test'
         }
     }
