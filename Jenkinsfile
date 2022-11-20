@@ -1,12 +1,12 @@
 node {
     stage('build') {
         withMaven(maven: 'mvn') {
-            sh 'mvn -f java/pom.xml clean verify'
+            sh 'mvn -f pom.xml clean verify'
         }
     }
     stage('test') {
         withMaven(maven: 'mvn') {
-            sh 'mvn -f java/pom.xml test'
+            sh 'mvn -f pom.xml test'
         }
     }
     stage('allure') {
