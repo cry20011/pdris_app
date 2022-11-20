@@ -28,17 +28,15 @@ pipeline {
         }
         stage('sonarQube') {
             steps {
-                script {
-                    def scannerHome = tool 'SonarQube';
-                    withSonarQubeEnv() {
-                        sh "${scannerHome}/bin/sonar-scanner \
-                        -Dsonar.projectKey=pipeline \
-                        -Dsonar.sources=java/src/main \
-                        -Dsonar.tests=java/src/test \
-                        -Dsonar.java.binaries=java/target/classes \
-                        -Dsonar.junit.reportPaths=java/target/surefire-reports \
-                        -Dsonar.coverage.jacoco.xmlReportPaths=java/target/site/jacoco/jacoco.xml"
-                    }
+                def scannerHome = tool 'SonarQube';
+                withSonarQubeEnv() {
+                    sh "${scannerHome}/bin/sonar-scanner \
+                    -Dsonar.projectKey=pipeline \
+                    -Dsonar.sources=java/src/main \
+                    -Dsonar.tests=java/src/test \
+                    -Dsonar.java.binaries=java/target/classes \
+                    -Dsonar.junit.reportPaths=java/target/surefire-reports \
+                    -Dsonar.coverage.jacoco.xmlReportPaths=java/target/site/jacoco/jacoco.xml"
                 }
             }
         }
