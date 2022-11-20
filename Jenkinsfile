@@ -23,6 +23,7 @@ pipeline {
                         reportBuildPolicy: 'ALWAYS',
                         results: [[path: 'java/target/allure-results']]
                     ])
+                    
             }
         }
         stage('sonar_qube') {
