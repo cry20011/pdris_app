@@ -2,10 +2,14 @@ pipeline {
     agent any
     stages {
         stage('build') {
-            sh 'mvn -f java/pom.xml clean verify'
+            steps {
+                sh 'mvn -f java/pom.xml clean verify'
+            }
         }
         stage('test') {
-            sh 'mvn -f java/pom.xml test'
+            steps {
+                sh 'mvn -f java/pom.xml test'
+            }
         }
         stage('allure') {
             allure([
