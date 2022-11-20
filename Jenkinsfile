@@ -21,16 +21,16 @@ pipeline {
                         jdk: '',
                         properties: [],
                         reportBuildPolicy: 'ALWAYS',
-                        results: [[path: 'java/target/allure-results']]
+                        results: [[path: 'java/target/results']]
                     ])
 
             }
         }
-        stage('sonar_qube') {
+        stage('sonarQube') {
             steps {
                 script {
                     def scannerHome = tool 'Sonar4';
-                    withSonarQubeEnv('Sonar4') {
+                    withSonarQubeEnv() {
                         sh "${scannerHome}/bin/sonar-scanner \
                         -Dsonar.projectKey=pipeline \
                         -Dsonar.sources=java/src/main \
